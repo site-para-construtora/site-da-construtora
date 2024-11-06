@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Site</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo" />
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="#orcamento">Orçamento</a></li>
+                <li><a href="#obra">Obras</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#parcerias">Parcerias</a></li>
+                <li><a href="#sobre">Sobre Nós</a></li>
+            </ul>
+            <ul class="login">
+                <li><a href="#login">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="carrossel">
+        <div class="carrossel-imagens">
+            <img src="assets/imagem1.jpg" alt="Imagem 1">
+            <img src="assets/imagem2.jpg" alt="Imagem 2">
+            <img src="assets/imagem3.png" alt="Imagem 3">
+            <img src="assets/imagem4.jpg" alt="Imagem 4">
+        </div>
+        <button class="prev" onclick="mudarImagem(-1)">&#10094;</button>
+        <button class="next" onclick="mudarImagem(1)">&#10095;</button>
+    </div>
+
+    <section class="info-secao">
+        <div class="container">
+            <h2 class="titulo">
+            <span class="cor-1">Quem</span> <span class="cor-2">Somos</span>
+            </h2>
+            <p class="texto">
+                Nossa jornada começou de forma humilde, com uma grande vontade de crescer e conquistar novos desafios. Antes de ingressar no setor da construção civil, eu trabalhava como caseiro, cuidando de propriedades e zelando por cada detalhe. Foi nesse período que percebi que queria mais: o desejo de ter meu próprio negócio e trabalhar para mim mesmo se tornou uma motivação diária.</p>
+            <a href="outra-pagina.html" class="btn-saiba-mais">Saiba Mais</a>
+        </div>
+    </section>
+
+    <script>
+        let indiceImagem = 0;
+        const imagens = document.querySelectorAll('.carrossel-imagens img');
+        
+        function mostrarImagem(indice) {
+            if (indice >= imagens.length) {
+                indiceImagem = 0;
+            } else if (indice < 0) {
+                indiceImagem = imagens.length - 1;
+            } else {
+                indiceImagem = indice;
+            }
+            const offset = -indiceImagem * 100; // Ajusta a posição da imagem
+            document.querySelector('.carrossel-imagens').style.transform = `translateX(${offset}%)`;
+        }
+        
+        function mudarImagem(delta) {
+            mostrarImagem(indiceImagem + delta);
+        }
+        
+        // Mostrar a primeira imagem ao carregar
+        mostrarImagem(indiceImagem);
+        </script>
+
+<div class="container">
+    <h1 class="titulo-geral">ÁREAS QUE ATUAMOS</h1>
+    <div class="imagens-container">
+        <div class="imagem-item">
+            <img src="assets/casa.jpg" alt="Residencial">
+            <div class="overlay">
+                <p class="titulo-imagem">RESIDENCIAL</p>
+            </div>
+        </div>
+        <div class="imagem-item">
+            <img src="assets/eletri.jpg" alt="Elétrica">
+            <div class="overlay">
+                <p class="titulo-imagem">ELÉTRICA</p>
+            </div>
+        </div>
+        <div class="imagem-item">
+            <img src="assets/hidra.jpg" alt="Hidráulica">
+            <div class="overlay">
+                <p class="titulo-imagem">HIDRÁULICA</p>
+            </div>
+        </div>
+        <div class="imagem-item">
+            <img src="assets/piso.jpg" alt="Pisos">
+            <div class="overlay">
+                <p class="titulo-imagem">PISOS</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<footer>
+    <div class="container">
+      <!-- Logo e Nome da Empresa -->
+      <div class="logo">
+        <h2>Construtora ABC</h2>
+        <p>Construindo sonhos com qualidade e compromisso.</p>
+      </div>
+  
+      <!-- Informações de Contato -->
+      <div class="contact-info">
+        <p><strong>Endereço:</strong> Rua Crystal Teu Cu no Meu pau, 333, São Paulo - SP</p>
+        <p><strong>Telefone:</strong> (11) 1234-5678</p>
+        <p><strong>Email:</strong> meupaunasuamao@gmail.com.br</p>
+      </div>
+  
+      <!-- Links Úteis -->
+      <div class="links">
+        <a href="#">Sobre Nós</a>
+        <a href="#">Serviços</a>
+        <a href="#">Projetos</a>
+        <a href="#">Blog</a>
+        <a href="#">Contato</a>
+      </div>
+  
+      <!-- Redes Sociais -->
+      <div class="social-media">
+        <a href="#"><img src="facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+        <a href="#"><img src="whatsapp.png" alt="Whatsapp"></a>
+      </div>
+  
+      <!-- Direitos Autorais -->
+      <div class="copyright">
+        <p>&copy; 2024 Construtora ABC. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
+</body>
+</html>
