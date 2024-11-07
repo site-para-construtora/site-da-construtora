@@ -295,7 +295,7 @@ footer .container {
 footer h2 {
     font-size: 24px; /* Tamanho da fonte do título */
     margin: 0; 
-    color: #ffd700; /* Cor de destaque do título */
+    color: red; /* Cor de destaque do título */
 }
 
 footer p {
@@ -321,7 +321,7 @@ footer .links a {
 }
 
 footer .links a:hover {
-    color: #black; /* Cor de destaque ao passar o mouse */
+    color: red; /* Cor de destaque ao passar o mouse */
     text-decoration: underline;
 }
 
