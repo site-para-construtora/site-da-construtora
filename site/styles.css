@@ -226,141 +226,143 @@ button {
     text-align: center;
 }
 footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  height: -1px;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Logo e Nome da Empresa */
+footer h2 {
+  font-size: 24px;
+  margin: 0;
+  color: white; /* Cor de destaque */
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* Informações de Contato */
+footer .contact-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Links Úteis */
+footer .links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+footer .links a:hover {
+  color: white; /* Cor de destaque ao passar o mouse */
+  text-decoration: underline;
+}
+
+/* Estilo para o Rodapé */
+footer {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 20px; /* Espaçamento aumentado para dar mais altura */
     text-align: center;
-    height: -5px;
+    font-size: 16px;
   }
   
   footer .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    display: flex;
+    flex-direction: column; /* Mantém o layout em coluna */
+    align-items: center;
   }
   
-  /* Logo e Nome da Empresa */
   footer h2 {
     font-size: 24px;
-    margin: 0;
-    color: #ffd700; /* Cor de destaque */
+    margin: 10px 0; /* Espaço ao redor do título */
+    color: red;
   }
   
   footer p {
     margin: 5px 0;
   }
   
-  /* Informações de Contato */
-  footer .contact-info p {
-    margin: 5px 0;
+  /* Adicionando flex-grow para as seções, permitindo que ocupem mais espaço */
+  footer .contact-info, footer .links, footer .social-media {
+    width: 100%; /* Garantir que esses itens ocupem toda a largura */
+    margin-top: 20px;
+    display: flex; /* Flexbox para permitir a distribuição do espaço */
+    justify-content: center; /* Centraliza os itens */
+  }
+  
+  footer .contact-info p, footer .links p {
+    margin: 10px 0; /* Adiciona margem entre os itens de contato */
     font-size: 16px;
     line-height: 1.5;
   }
   
-  /* Links Úteis */
   footer .links a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0px 15px; /* Aumentando a distância entre os links */
     font-size: 16px;
   }
   
   footer .links a:hover {
-    color: #ffd700; /* Cor de destaque ao passar o mouse */
+    color: red;
     text-decoration: underline;
   }
   
-
-
-
-
-  /* Estilo para o Rodapé */
-footer {
-    background-color: #333; /* Cor de fundo do rodapé */
-    color: #fff; /* Cor do texto */
-    padding: 40px 0; /* Espaçamento interno */
-    text-align: center; /* Centraliza o texto */
-    font-size: 16px; /* Tamanho do texto */
-}
-
-footer .container {
-    max-width: 1200px;
-    margin: 0 auto; /* Centraliza o container */
-    padding: 0 15px;
+  footer .social-media {
+    margin-top: 20px;
     display: flex;
-    flex-direction: column; /* Organiza o conteúdo em coluna em telas menores */
-    align-items: center;
-}
-
-footer h2 {
-    font-size: 24px; /* Tamanho da fonte do título */
-    margin: 0; 
-    color: red; /* Cor de destaque do título */
-}
-
-footer p {
-    margin: 5px 0;
-}
-
-footer .contact-info, footer .links, footer .social-media {
-    width: 100%; /* Garante que esses itens ocupem toda a largura */
-    margin-top: 20px;
-}
-
-footer .contact-info p, footer .links p {
-    margin: 5px 0;
-    font-size: 16px;
-    line-height: 1.5;
-}
-
-footer .links a {
-    color: #fff; /* Cor do link */
-    text-decoration: none;
-    margin: 0 10px; /* Espaçamento entre os links */
-    font-size: 16px;
-}
-
-footer .links a:hover {
-    color: red; /* Cor de destaque ao passar o mouse */
-    text-decoration: underline;
-}
-
-footer .social-media {
-    margin-top: 20px;
-}
-
-footer .social-media a {
-    margin: 0 15px; /* Espaçamento entre os ícones */
-    display: inline-block; /* Exibe ícones de redes sociais lado a lado */
-}
-
-footer .social-media img {
-    width: 30px; /* Tamanho dos ícones */
+    justify-content: center; /* Centraliza os ícones de redes sociais */
+  }
+  
+  footer .social-media a {
+    margin: 0 15px;
+  }
+  
+  footer .social-media img {
+    width: 30px;
     height: 30px;
     transition: transform 0.3s ease;
-}
-
-footer .social-media a:hover img {
-    transform: scale(1.1); /* Efeito de zoom ao passar o mouse */
-}
-
-footer .copyright {
+  }
+  
+  footer .social-media a:hover img {
+    transform: scale(1.1);
+  }
+  
+  footer .copyright {
     font-size: 14px;
-    color: #bbb; /* Cor para o texto de copyright */
+    color: #bbb;
     margin-top: 20px;
-}
-
-@media (max-width: 768px) {
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
     footer .container {
-        flex-direction: column; /* Organiza os itens em coluna em telas pequenas */
-        align-items: center;
+      flex-direction: column;
+      align-items: center;
     }
-
-    footer .links, footer .social-media {
-        text-align: center; /* Centraliza os links e redes sociais em telas pequenas */
+  
+    footer .links,
+    footer .social-media {
+      text-align: center;
     }
-
+  
     footer .social-media a {
-        margin: 0 10px; /* Ajusta o espaçamento para telas pequenas */
+      margin: 0 10px; /* Ajusta o espaçamento para telas pequenas */
     }
-}
+  }
