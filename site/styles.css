@@ -321,7 +321,7 @@ footer .links a {
 }
 
 footer .links a:hover {
-    color: #ffd700; /* Cor de destaque ao passar o mouse */
+    color: #black; /* Cor de destaque ao passar o mouse */
     text-decoration: underline;
 }
 
