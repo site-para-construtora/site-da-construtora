@@ -1,7 +1,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    font-size: 19px;
+    font-size: 20px;
 }
 
 #topo {
@@ -57,14 +57,14 @@ footer {
 /* Carrossel */
 .carrossel {
     position: relative;
-    max-width: 950px;
+    max-width: 800px;
     margin: 20px auto;
     overflow: hidden;
 }
 
 .carrossel-imagens {
     display: flex;
-    transition: transform 1.5s ease;
+    transition: transform 0.5s ease;
 }
 
 .carrossel img {
@@ -226,59 +226,117 @@ button {
     text-align: center;
 }
 footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  height: -1px;
+}
+
+footer .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Logo e Nome da Empresa */
+footer h2 {
+  font-size: 24px;
+  margin: 0;
+  color: white; /* Cor de destaque */
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+/* Informações de Contato */
+footer .contact-info p {
+  margin: 5px 0;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* Links Úteis */
+footer .links a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 16px;
+}
+
+footer .links a:hover {
+  color: white; /* Cor de destaque ao passar o mouse */
+  text-decoration: underline;
+}
+
+/* Estilo para o Rodapé */
+footer {
     background-color: #333;
     color: #fff;
-    padding: 20px 0;
+    padding: 40px 20px; /* Espaçamento aumentado para dar mais altura */
     text-align: center;
-    height: -5px;
+    font-size: 16px;
   }
   
   footer .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
+    display: flex;
+    flex-direction: column; /* Mantém o layout em coluna */
+    align-items: center;
   }
   
-  /* Logo e Nome da Empresa */
   footer h2 {
-    font-size: px;
-    margin: 0;
-    color: #ffd700; /* Cor de destaque */
+    font-size: 24px;
+    margin: 10px 0; /* Espaço ao redor do título */
+    color: red;
   }
   
   footer p {
     margin: 5px 0;
   }
   
-  /* Informações de Contato */
-  footer .contact-info p {
-    margin: 5px 0;
+  /* Adicionando flex-grow para as seções, permitindo que ocupem mais espaço */
+  footer .contact-info, footer .links, footer .social-media {
+    width: 100%; /* Garantir que esses itens ocupem toda a largura */
+    margin-top: 20px;
+    display: flex; /* Flexbox para permitir a distribuição do espaço */
+    justify-content: center; /* Centraliza os itens */
+  }
+  
+  footer .contact-info p, footer .links p {
+    margin: 10px 0; /* Adiciona margem entre os itens de contato */
     font-size: 16px;
     line-height: 1.5;
   }
   
-  /* Links Úteis */
   footer .links a {
     color: #fff;
     text-decoration: none;
-    margin: 0 10px;
+    margin: 0px 15px; /* Aumentando a distância entre os links */
     font-size: 16px;
   }
   
   footer .links a:hover {
-    color: #ffd700; /* Cor de destaque ao passar o mouse */
+    color: red;
     text-decoration: underline;
   }
   
-  /* Redes Sociais */
+  footer .social-media {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center; /* Centraliza os ícones de redes sociais */
+  }
+  
   footer .social-media a {
-    margin: 0 10px;
-    display: inline-block;
+    margin: 0 15px;
   }
   
   footer .social-media img {
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     transition: transform 0.3s ease;
   }
   
@@ -286,98 +344,25 @@ footer {
     transform: scale(1.1);
   }
   
-  /* Direitos Autorais */
   footer .copyright {
     font-size: 14px;
     color: #bbb;
-    margin-top: 15px;
+    margin-top: 20px;
   }
   
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    padding: 20px;
-}
-
-.produto-item .botao {
-    display: flex;
-    justify-content: center; /* Centraliza o botão horizontalmente */
-    margin-top: 15px; /* Adiciona espaçamento entre o conteúdo do produto e o botão */
-}
-
-.produtos {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around; /* Para alinhar os itens de forma responsiva */
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.produto-item {
-    width: 100%;
-    max-width: 350px; /* Tamanho máximo para o produto */
-    text-align: center;
-    padding: 15px;
-    border-radius: 10px;
-    background-color: white;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    transition: transform 0.3s ease; /* Animação de hover */
-}
-
-.produto-item:hover {
-    transform: scale(1.05); /* Aumenta um pouco o item ao passar o mouse */
-}
-
-.produto-item img {
-    width: 100%;
-    height: auto;
-    max-width: 250px;
-    border-radius: 8px;
-    margin-bottom: 10px;
-}
-
-.produto-item .nome-produto {
-    font-size: 1.4em;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-
-.produto-item .preco-produto {
-    font-size: 1.2em;
-    color: #555;
-    margin-bottom: 20px;
-}
-
-.produto-item .btn-adicionar {
-    background-color: #28a745;
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    cursor: pointer;
-    font-size: 1.1em;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-    width: 100%; /* Faz o botão ocupar a largura total do contêiner */
-    max-width: 220px; /* Limita a largura máxima do botão */
-    margin-top: 50px; /* Espaço entre o preço e o botão */
-}
-
-.produto-item .btn-adicionar:hover {
-    background-color: #218838;
-}
-
-@media (max-width: 768px) {
-    .produtos {
-        flex-direction: column; /* Empilha os itens em telas menores */
-        align-items: center;
+  /* Responsividade */
+  @media (max-width: 768px) {
+    footer .container {
+      flex-direction: column;
+      align-items: center;
     }
-}
+  
+    footer .links,
+    footer .social-media {
+      text-align: center;
+    }
+  
+    footer .social-media a {
+      margin: 0 10px; /* Ajusta o espaçamento para telas pequenas */
+    }
+  }
