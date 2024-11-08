@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="produtos.css">
+    <title>Canutio Construções</title>
+    <!-- Outros links e meta tags -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">    
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+          <img src="assets/logo.png" alt="Logo" />
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="../../index.html">Ínicio</a></li>
+            <li><a href="#orcamento">Orçamento</a></li>
+            <li><a href="#obra">Obras</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="sobrenos.html">Sobre Nós</a></li>
+          </ul>
+          <ul class="login">
+            <li><a href="#login">Login</a></li>
+          </ul>
+        </nav>
+      </header>
+      <div class="container">
+        <h1 class="title">Nossos Produtos</h1>
+        
+        <div class="product-grid">
+            <!-- Produto 1 -->
+            <div class="product-card">
+              <a href="carrinho/carrinho.html"><span class="add-to-cart-icon" onclick="goToCart()"><i class="fas fa-shopping-cart"></i></span></a>
+                <img src="assets/p1.jpg" alt="Produto 1" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Reboco</h3>
+                    <p class="product-description">Descrição do Produto - O valor do reboco será cobrado em metros.</p>
+                    <div class="product-price">R$ 33,99</div>
+                    <div class="product-rating">⭐⭐⭐⭐☆</div>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="product-card">
+              <a href="carrinho/carrinho.html"><span class="add-to-cart-icon" onclick="goToCart()"><i class="fas fa-shopping-cart"></i></span></a>
+                <img src="assets/p2.jpg" alt="Produto 2" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Areia Grossa</h3>
+                    <p class="product-description">Descrição do Produto - O valor da areia grossa será cobrado em metros.</p>
+                    <div class="product-price">R$ 197,77</div>
+                    <div class="product-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="product-card">
+              <a href="carrinho/carrinho.html"><span class="add-to-cart-icon" onclick="goToCart()"><i class="fas fa-shopping-cart"></i></span></a>
+                <img src="assets/p3.jpg" alt="Produto 3" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Areia Fina</h3>
+                    <p class="product-description">Descrição do Produto - O valor da areia fina será cobrado em metros.</p>
+                    <div class="product-price">R$ 193,33</div>
+                    <div class="product-rating">⭐⭐⭐⭐☆</div>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="product-card">
+              <a href="carrinho/carrinho.html"><span class="add-to-cart-icon" onclick="goToCart()"><i class="fas fa-shopping-cart"></i></span></a>
+                <img src="assets/p4.jpg" alt="Produto 4" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Piso</h3>
+                    <p class="product-description">Descrição do Produto - O valor do piso será cobrado em metros.</p>
+                    <div class="product-price">R$ 30,00</div>
+                    <div class="product-rating">⭐⭐⭐⭐☆</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<br><br><br><br><br>
+
+    <footer>
+        <div class="container">
+          <!-- Logo e Nome da Empresa -->
+          <div class="logo">
+            <h2>Construtora Canutio.</h2>
+            <p>Construindo sonhos com qualidade e compromisso.</p>
+          </div>
+      
+          <!-- Informações de Contato -->
+          <div class="contact-info">
+            <p><strong>Endereço:</strong> Rua, 333, São Paulo - SP |</p>
+            <p><strong>Telefone:</strong> (11) 91234-5678 |</p>
+            <p><strong>Email:</strong> canutiocontrutoras@gmail.com.br</p>
+          </div>
+      
+          <!-- Links Úteis -->
+          <div class="links">
+            <a href="#">Sobre Nós</a>
+            <a href="#">Serviços</a>
+            <a href="#">Projetos</a>
+            <a href="#">Blog</a>
+            <a href="#">Contato</a>
+          </div>
+      
+          <!-- Redes Sociais -->
+          <div class="social-media">
+            <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+            <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+            <a href="#"><img src="assets/whatsapp.png" alt="Whatsapp"></a>
+          </div>
+      
+          <!-- Direitos Autorais -->
+          <div class="copyright">
+            <p>&copy; 2024 Construtora ABC. Todos os direitos reservados.</p>
+          </div>
+        </div>
+      </footer>
+
+    <script>
+        // Função para adicionar um produto ao carrinho
+        function addToCart(productName, productPrice) {
+            // Obtenha o carrinho atual do localStorage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Crie um novo produto
+            let newProduct = { name: productName, price: productPrice };
+            
+            // Adicione o produto ao carrinho
+            cart.push(newProduct);
+            
+            // Salve o carrinho atualizado no localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Opcionalmente, redirecione para a página do carrinho após adicionar
+            window.location.href = "carrinho/carrinho.html";
+        }
+    </script>
+</body>
+</html>
