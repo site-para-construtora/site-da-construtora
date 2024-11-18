@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrossel de Imagens</title>
+    <link rel="stylesheet" href="obras.css">
+</head>
+<body>
+
+    <header id="topo">
+        <div class="logo">
+            <img src="assets/logo.png" alt="Logo" />
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="../../index.html">Início</a></li> <!-- Correção do link "Ínicio" para "Início" -->
+                <li><a href="#obra">Obras</a></li>
+                <li><a href="../parcerias/parcerias.html">Parcerias</a></li>
+                <li><a href="servicos.html">Serviços</a></li>
+                <li><a href="../produtos/produtos.html">Produtos</a></li>
+                <li><a href="../sobrenos/sobrenos.html">Sobre Nós</a></li>
+            </ul>
+            <ul class="login">
+                <li><a href="../cadastro ou login/cadastro_login.html">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+<br><br>
+
+    <div class="carousel">
+        <div class="carousel-inner">
+            <img src="carrossel/1c.jpg" alt="Imagem 1">
+            <img src="carrossel/2c.jpg" alt="Imagem 2">
+            <img src="carrossel/3c.jpg" alt="Imagem 3">
+        </div>
+        <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+        <button class="next" onclick="changeSlide(1)">&#10095;</button>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+
+        function changeSlide(direction) {
+            const slides = document.querySelectorAll('.carousel-inner img');
+            const totalSlides = slides.length;
+
+            currentIndex = (currentIndex + direction + totalSlides) % totalSlides;
+
+            const carouselInner = document.querySelector('.carousel-inner');
+            carouselInner.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+    </script>
+
+<br><br>
+
+    <footer>
+        <div class="container">
+            <!-- Logo e Nome da Empresa -->
+            <div class="logo">
+                <h2>Construtora Canutio.</h2>
+                <p>Construindo sonhos com qualidade e compromisso.</p>
+            </div>
+
+            <!-- Informações de Contato -->
+            <div class="contact-info">
+                <p><strong>Endereço:</strong> Rua, 333, São Paulo - SP |</p>
+                <p><strong>Telefone:</strong> (11) 91234-5678 |</p>
+                <p><strong>Email:</strong> canutiocontrutoras@gmail.com.br</p>
+            </div>
+
+            <!-- Links Úteis -->
+            <div class="links">
+                <a href="#">Sobre Nós</a>
+                <a href="#">Serviços</a>
+                <a href="#">Projetos</a>
+                <a href="#">Blog</a>
+                <a href="#">Contato</a>
+            </div>
+
+            <!-- Redes Sociais -->
+            <div class="social-media">
+                <a href="#"><img src="assets/facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="assets/instagram.png" alt="Instagram"></a>
+                <a href="#"><img src="assets/whatsapp.png" alt="Whatsapp"></a>
+            </div>
+
+            <!-- Direitos Autorais -->
+            <div class="copyright">
+                <p>&copy; 2024 Construtora ABC. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

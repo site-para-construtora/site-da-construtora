@@ -1,0 +1,269 @@
+/* Reseta margens e paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo do Body */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+}
+
+#topo {
+    display: flex;
+    align-items: center;
+    background-color: #a7a7a7;
+    color: white;
+    padding: 8px;
+    margin: 0;
+}
+
+.logo img {
+    height: 90px;
+    margin-right: -50px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+    list-style-type: none;
+    flex-grow: 1;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.menu li a:hover {
+    text-decoration: underline;
+}
+
+.login {
+    list-style-type: none;
+}
+
+.login li {
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.login li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 10px 20px;
+    background-color: #6d6c6c;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.login li a:hover {
+    background-color: #1e1f20ec;
+}
+
+/* Conteúdo principal */
+.content {
+    flex-grow: 1; /* O conteúdo ocupará o espaço restante */
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #f3f3f3;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.titulo {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #000000;
+}
+
+/* Rodapé */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    font-size: 16px;
+    margin-top: auto; /* Isso empurra o footer para o final */
+}
+
+footer .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer h2 {
+    font-size: 24px;
+    margin: 10px 0;
+    color: red;
+}
+
+footer .contact-info,
+footer .links,
+footer .social-media {
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+footer .contact-info p,
+footer .links p {
+    margin: 10px 0;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+footer .links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0px 15px;
+    font-size: 16px;
+}
+
+footer .links a:hover {
+    color: red;
+    text-decoration: underline;
+}
+
+footer .social-media a {
+    margin: 0 15px;
+}
+
+footer .social-media img {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+footer .social-media a:hover img {
+    transform: scale(1.1);
+}
+
+footer .copyright {
+    font-size: 14px;
+    color: #bbb;
+    margin-top: 20px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    footer .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer .links,
+    footer .social-media {
+        text-align: center;
+    }
+
+    footer .social-media a {
+        margin: 0 10px;
+    }
+
+    .carousel {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .carousel-inner {
+        width: 400%;
+    }
+
+    .carousel-inner img {
+        width: 100%;
+    }
+
+    button.prev, button.next {
+        padding: 15px;
+        font-size: 18px;
+    }
+}
+
+/* Carrossel */
+.carousel {
+    position: relative;
+    width: 50%; /* Diminuir a largura do carrossel para 50% da tela */
+    max-width: 1000px; /* Definir uma largura máxima para o carrossel */
+    margin: 0 auto; /* Centralizar o carrossel horizontalmente */
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* A largura total das imagens dentro do carrossel (ajustado para 300%) */
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 300%; /* As três imagens ocupando 300% da largura do carrossel */
+}
+
+.carousel-inner img {
+    width: 33.333%; /* Cada imagem ocupará 33.333% do carrossel */
+    flex-shrink: 0; /* Impede que as imagens encolham */
+}
+
+/* Botões do carrossel */
+button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .carousel {
+        width: 80%; /* Ajuste do carrossel para 80% da largura na tela pequena */
+    }
+
+    .carousel-inner {
+        width: 300%; /* Continuar com a largura de 300% para o carrossel */
+    }
+
+    .carousel-inner img {
+        width: 33.333%; /* Garantir que as imagens se ajustem corretamente */
+    }
+}
