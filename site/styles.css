@@ -125,6 +125,7 @@ button {
     font-size: 1.4em;
     color: black;
     margin-bottom: 10px;
+    text-align: justify;
 }
 
 .btn-saiba-mais {
