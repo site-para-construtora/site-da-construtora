@@ -72,16 +72,6 @@ nav {
   background-color: #1e1f20ec; /* Cor de fundo ao passar o mouse */
 }
 
-.texto {
-    max-width: 1500px; /* Define a largura máxima do texto */
-    margin: 20px auto; /* Centraliza o texto horizontalmente */
-    text-align: center; /* Centraliza o texto dentro do bloco */
-    font-size: 1.3em;
-    line-height: 1.5;
-    color: #333;
-    text-align:justify;
-}
-
 .titulo {
     width: 90%;
     margin: 0 auto;
@@ -100,59 +90,47 @@ nav {
     
 }
 
-.parcerias-container {
-    max-width: 100%;
-    text-align: center;
-  }
-  
-  .parcerias {
-    display: flex;
-    justify-content: space-around;
-    gap: 5px; /* Espaçamento reduzido */
-  }
-  
-  .parceria-item {
-    text-align: center;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
-    width: 250px; /* Define a largura padrão */
-  }
-  
-  .parceria-item:hover {
-    transform: scale(1.05);
-  }
-  
-  .parceria-item img {
-    width: 250px;
-    height: auto;
-    margin-bottom: 20px; /* Espaço entre a imagem e o botão */
-  }
-  
-  .parceria-item button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: rgb(121, 117, 117);
-    color: #fff;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-    transition: background-color 0.3s;
-  }
-  
-  .parceria-item button:hover {
-    background-color: grey;
-  }
-  
-  /* Remove o sublinhado dos links dentro da .parceria-item */
-  .parceria-item a {
-    text-decoration: none; /* Remove o sublinhado do link */
-  }
+/* Carrossel */
+.carrossel {
+  position: relative;
+  max-width: 600px; /* Defina o tamanho máximo desejado do carrossel */
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.carrossel-imagens {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carrossel img {
+  width: 100%; /* Agora as imagens ocupam 100% da largura do contêiner */
+  object-fit: cover; /* Assegura que as imagens cubram toda a área do carrossel sem distorcer */
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+button:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
 
 footer {
   background-color: #333;
@@ -297,4 +275,31 @@ footer .copyright {
   footer .social-media a {
     margin: 0 10px; /* Ajusta o espaçamento para telas pequenas */
   }
+}
+
+#conteudo-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px;
+    padding: 20px;
+    gap: 20px;
+}
+
+.texto-lado-esquerdo {
+    flex: 1; /* Permite que o texto ocupe mais ou menos espaço, conforme necessário */
+    max-width: 45%; /* Define uma largura máxima para evitar que o texto ocupe muito espaço */
+}
+
+.texto-lado-esquerdo h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #1f1e1e;
+}
+
+.texto-lado-esquerdo p {
+    font-size: 20px;
+    line-height: 1.6em;
+    color: #000000;
+    text-align: justify;
 }
