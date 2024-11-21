@@ -1,7 +1,7 @@
 # site-da-construtora
 Repositorio principal
 
-[site][https://site-para-construtora.github.io/site-da-construtora/site/]
+[site](https://site-para-construtora.github.io/site-da-construtora/site/)
 
 VITOR: ficara responsável pela ortografia do site, seguindo a norma dos nossos padrões
 
