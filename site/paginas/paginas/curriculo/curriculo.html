@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Envio de Currículo</title>
+    <link rel="stylesheet" href="curriculo.css" />
+  </head>
+
+  <body>
+    <div class="background-image"></div>
+    <!-- Camada de imagem com opacidade -->
+
+    <div class="container">
+      <h1>Envio de Currículo</h1>
+      <form id="uploadForm">
+        <div class="file-input">
+          <!-- Texto acima do botão -->
+          <div class="file-label-text">Escolha o seu arquivo</div>
+
+          <!-- Botão de upload -->
+          <label for="fileUpload">+</label>
+          <!-- Botão quadrado -->
+          <input
+            type="file"
+            id="fileUpload"
+            name="file"
+            accept=".pdf, .doc, .docx"
+            required
+          />
+
+          <!-- Nome do arquivo selecionado -->
+          <div class="file-name" id="fileName">Nenhum arquivo selecionado</div>
+        </div>
+        <div class="button-container">
+          <button type="submit">Enviar Currículo</button>
+        </div>
+      </form>
+      <div class="message" id="message"></div>
+    </div>
+
+    <a href="../../index.html">
+        <button class="back-button">Voltar</button>
+    </a>
+
+    <script>
+      const fileInput = document.getElementById("fileUpload");
+      const fileNameDisplay = document.getElementById("fileName");
+
+      // Quando o usuário selecionar um arquivo
+      fileInput.addEventListener("change", function () {
+        const file = fileInput.files[0];
+        if (file) {
+          fileNameDisplay.textContent = `Arquivo: ${file.name}`;
+        } else {
+          fileNameDisplay.textContent = "Nenhum arquivo selecionado";
+        }
+      });
+
+      // Envio do formulário (simulado)
+      document
+        .getElementById("uploadForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+
+          const file = fileInput.files[0];
+
+          if (file) {
+            document.getElementById(
+              "message"
+            ).textContent = `${file.name} enviado com sucesso!`;
+            document.getElementById("message").style.color = "green";
+          } else {
+            document.getElementById("message").textContent =
+              "Por favor, selecione um arquivo para enviar.";
+            document.getElementById("message").style.color = "red";
+          }
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="produtos.css">
+    <title>Canutio Construções</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <header id="topo">
+        <div class="logo">
+          <img src="assets/logo.png" alt="Logo" />
+        </div>
+        <nav>
+          <ul class="menu">
+            <li><a href="../../index.html">Ínicio</a></li>
+            <li><a href="../obras/obras.html">Obras</a></li>
+            <li><a href="../parcerias/parcerias.html">Parcerias</a></li>
+            <li><a href="../servicos/servicos.html">Serviços</a></li>
+            <li><a href="produtos.html">Produtos</a></li>
+            <li><a href="../sobrenos/sobrenos.html">Sobre Nós</a></li>
+          </ul>
+          <ul class="login">
+            <li><a href="../cadastro ou login/cadastro_login.html">Login</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- Pop-up para inserir a medida -->
+        <div id="popup" class="popup" style="display: none;">
+          <div class="popup-content">
+              <h3>Escolha a medida desejada</h3>
+              <input type="number" id="measure" placeholder="Insira a medida (em metros)" min="0.1" step="0.1" />
+              <button id="addCartBtn">Adicionar ao Carrinho</button>
+              <button id="closePopup"onclick=closePopup()>Cancelar</button>
+          </div>
+        </div>
+        
+        <br/>
+        <h1 class="title">Nossos Produtos</h1>
+        
+        <br/>
+        <div class="product-grid">
+            <!-- Produto 1 -->
+            <div class="product-card">
+                <span class="add-to-cart-icon" onclick="showPopup('Reboco', 33.99)"><i class="fas fa-shopping-cart"></i></span>
+                <img src="assets/p1.jpg" alt="Produto 1" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Reboco</h3>
+                    <p class="product-description"> O valor do reboco será cobrado em metros.</p>
+                    <div class="product-price">R$ 33,99</div>
+                    <div class="product-rating">⭐⭐⭐⭐☆</div>
+                </div>
+            </div>
+
+            <!-- Produto 2 -->
+            <div class="product-card">
+                <span class="add-to-cart-icon" onclick="showPopup('Areia Grossa', 197.77)"><i class="fas fa-shopping-cart"></i></span>
+                <img src="assets/p2.jpg" alt="Produto 2" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Areia Grossa</h3>
+                    <p class="product-description"> O valor da areia grossa será cobrado em metros.</p>
+                    <div class="product-price">R$ 197,77</div>
+                    <div class="product-rating">⭐⭐⭐⭐⭐</div>
+                </div>
+            </div>
+
+            <!-- Produto 3 -->
+            <div class="product-card">
+                <span class="add-to-cart-icon" onclick="showPopup('Areia Fina', 193.33)"><i class="fas fa-shopping-cart"></i></span>
+                <img src="assets/p3.jpg" alt="Produto 3" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Areia Fina</h3>
+                    <p class="product-description"> O valor da areia fina será cobrado em metros.</p>
+                    <div class="product-price">R$ 193,33</div>
+                    <div class="product-rating">⭐⭐⭐⭐☆</div>
+                </div>
+            </div>
+
+            <!-- Produto 4 -->
+            <div class="product-card">
+                <span class="add-to-cart-icon" onclick="showPopup('Piso', 30.00)"><i class="fas fa-shopping-cart"></i></span>
+                <img src="assets/p4.jpg" alt="Produto 4" class="product-image">
+                <div class="product-info">
+                    <h3 class="product-name">Piso</h3>
+                    <p class="product-description"> O valor do piso será cobrado em metros.</p>
+                    <div class="product-price">R$ 30,00</div>
+                    <div class="product-rating">⭐⭐⭐⭐☆</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <br/>
+
+    <script>
+        // Exibe o pop-up com o nome e o preço do produto
+        function showPopup(productName, productPrice) {
+            document.getElementById('popup').dataset.productName = productName;
+            document.getElementById('popup').dataset.productPrice = productPrice;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // Fecha o pop-up
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Adiciona ao carrinho com a metragem inserida
+        document.getElementById('addCartBtn').onclick = function () {
+            const measure = parseFloat(document.getElementById('measure').value);
+            const productName = document.getElementById('popup').dataset.productName;
+            const productPrice = parseFloat(document.getElementById('popup').dataset.productPrice);
+
+            if (!isNaN(measure) && measure > 0) {
+                const totalPrice = productPrice * measure;
+
+                // Armazena o item no carrinho (localStorage)
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                cart.push({ name: productName, price: productPrice, meters: measure, total: totalPrice });
+                localStorage.setItem('cart', JSON.stringify(cart));
+
+                closePopup();
+                alert("Produto adicionado ao carrinho!");
+            } else {
+                alert("Por favor, insira uma medida válida.");
+            }
+        };
+    </script>
+
+<br><br/><br/><br/><br/>
+
+<footer>
+  <div class="container">
+    <!-- Logo e Nome da Empresa -->
+    <div class="logo">
+      <h2>Construtora Canutio</h2>
+      <p>Construindo sonhos com qualidade e compromisso.</p>
+    </div>
+
+    <!-- Informações de Contato -->
+    <div class="contact-info">
+      <p><strong>Endereço:</strong> Rua, 333, São Paulo - SP |</p>
+      <p><strong>Telefone:</strong> (11) 91234-5678 |</p>
+      <p><strong>Email:</strong> canutiocontrutoras@gmail.com.br</p>
+    </div>
+
+    <!-- Links Úteis -->
+    <div class="links">
+      <a href="../../index.html">Ínicio</a>
+        <a href="../obras/obras.html">Obras</a>
+        <a href="../parcerias/parcerias.html">Parcerias</a>
+        <a href="../servicos/servicos.html">Serviços</a>
+        <a href="produtos.html">Produtos</a>
+        <a href="../sobrenos/sobrenos.html">Sobre Nós</a>
+        <a href="../curriculo/curriculo.html">Mande seu Currículo</a>
+    </div>
+
+    <!-- Redes Sociais -->
+    <div class="social-media">
+      <!-- Link para o Facebook -->
+      <a href="https://www.facebook.com/antonio.canutio.3" target="_blank">
+          <img src="assets/facebook.png" alt="Facebook">
+      </a>
+
+      <!-- Link para o Instagram -->
+      <a href="https://www.instagram.com/antoniocanutio/" target="_blank">
+          <img src="assets/instagram.png" alt="Instagram">
+      </a>
+
+      <!-- Link para o WhatsApp -->
+      <a href="https://wa.me/5511963111103" target="_blank">
+          <img src="assets/whatsapp.png" alt="Whatsapp">
+      </a>
+  </div>
+
+    <!-- Direitos Autorais -->
+    <div class="copyright">
+      <p>&copy; 2024 Construtora CANUTIO. Todos os direitos reservados.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
