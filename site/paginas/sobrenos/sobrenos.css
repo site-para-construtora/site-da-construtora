@@ -1,3 +1,4 @@
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -46,22 +47,23 @@ nav {
 .menu li a:hover {
   text-decoration: underline;
 }
+
 .login {
-  list-style-type: none; /* Remove os marcadores de lista */
+  list-style-type: none;
   margin: 0;
   padding: 0;
 }
 
 .login li {
-  display: inline-block; /* Exibe os itens de login na horizontal */
-  margin-left: 20px; /* Espaço entre os itens */
+  display: inline-block;
+  margin-left: 20px;
 }
 
 .login li a {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  display: block; /* Garante que o link ocupe todo o item */
+  display: block;
   padding: 10px 20px;
   background-color: #6d6c6c;
   border-radius: 5px;
@@ -69,7 +71,7 @@ nav {
 }
 
 .login li a:hover {
-  background-color: #1e1f20ec; /* Cor de fundo ao passar o mouse */
+  background-color: #1e1f20ec;
 }
 
 .content-section {
@@ -77,22 +79,23 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 40px;
-  gap: 40px; /* Espaço entre a imagem e o texto */
+  gap: 40px;
+  flex-wrap: wrap; /* Torna o conteúdo mais adaptável */
 }
 
 .image-container {
-  flex: 1; /* Faz a imagem ocupar 50% do espaço */
-  text-align: center; /* Para centralizar a imagem */
+  flex: 1;
+  text-align: center;
 }
 
 .image-container img {
-  width: 150%; /* Ajusta a imagem para 100% da largura do container */
-  max-width: 900px; /* Limita a largura máxima da imagem */
-  height: -100px; /* Mantém a proporção da imagem */
+  width: 100%; /* Ajusta para 100% da largura do container */
+  max-width: 900px; /* Limita a largura máxima */
+  height: auto; /* Mantém a proporção */
 }
 
 .text-container {
-  flex: 1; /* Faz o texto ocupar a outra metade do espaço */
+  flex: 1;
 }
 
 .text-container h2 {
@@ -109,19 +112,18 @@ nav {
 }
 
 .titulo {
-  font-size: 3.0em;
+  font-size: 3em;
   margin-bottom: 20px;
-  text-align: left; 
+  text-align: left;
 }
 
 .cor-1 {
-  color: black; /* Cor preta */
-  font-weight: bold; /* Negrito */
+  color: black;
+  font-weight: bold;
 }
 
 .cor-2 {
-  color: red; /* Cor vermelha */
-  
+  color: red;
 }
 
 .texto {
@@ -255,20 +257,73 @@ footer {
     color: #bbb;
     margin-top: 20px;
   }
-  
-  /* Responsividade */
-  @media (max-width: 768px) {
-    footer .container {
-      flex-direction: column;
-      align-items: center;
-    }
-  
-    footer .links,
-    footer .social-media {
-      text-align: center;
-    }
-  
-    footer .social-media a {
-      margin: 0 10px; /* Ajusta o espaçamento para telas pequenas */
-    }
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .content-section {
+    flex-direction: column;
+    padding: 20px;
   }
+
+  .text-container {
+    text-align: center;
+  }
+
+  footer {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 768px) {
+  #topo {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .image-container img {
+    width: 80%; /* Ajusta largura da imagem para telas pequenas */
+  }
+
+  .text-container h2 {
+    font-size: 22px;
+  }
+
+  footer .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  footer .links,
+  footer .social-media {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: 16px;
+  }
+
+  .menu li {
+    margin: 0 5px;
+  }
+
+  .login li a {
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+
+  .text-container p {
+    font-size: 16px;
+  }
+
+  footer h2 {
+    font-size: 20px;
+  }
+}
